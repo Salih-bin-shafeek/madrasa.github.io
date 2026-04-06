@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- === SEO META TAGS === -->
+    <!-- PRIMARY METADATA -->
+    <title>Madrassa Manarul Quran - Islamic Educational Institute</title>
+    <meta name="description" content="Madrassa Manarul Quran offers high-quality Quranic education, Hifz programs, and comprehensive Deeniyat studies in a modern, premium environment.">
+    <meta name="keywords" content="Madrassa, Quran, Hifz, Tajweed, Islamic Education, Kerala, Manarul Quran, Islamic Studies, Deeniyat">
+    <meta name="author" content="Madrassa Manarul Quran">
+    
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+    <!-- Paste the code given by Google Search Console below, removing the comments -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
+
+    <!-- OPEN GRAPH FOR SOCIAL MEDIA (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Madrassa Manarul Quran">
+    <meta property="og:description" content="Guiding hearts through the light of the Quran. Join our structured Hifz and Deeniyat programs.">
+
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Madrassa Manarul Quran">
+    <meta name="twitter:description" content="Guiding hearts through the light of the Quran. Join our structured Hifz and Deeniyat programs.">
+    <!-- === END SEO META TAGS === -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-page: #050508;
+            --bg-card: #0a0a12;
+            --bg-elevated: #10101a;
+            --gold-primary: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --gold-subtle: rgba(212, 175, 55, 0.15);
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --text-tertiary: rgba(255, 255, 255, 0.4);
+        }
+
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .gold-text {
+            color: var(--gold-primary);
+        }
+
+        .gold-bg {
+            background-color: var(--gold-primary);
+        }
+
+        .gold-border {
+            border-color: var(--gold-primary);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            top: 72px;
+            background: var(--bg-page);
+            z-index: 40;
+        }
+
+        .mobile-menu-overlay.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        #video-modal {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        #video-modal.active {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .card-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 0;
+            transform: translateY(10px);
+        }
+
+        .glass-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover .card-details,
+        .glass-card.focused-card .card-details {
+            max-height: 250px;
+            opacity: 1;
+            margin-top: 1rem;
+            transform: translateY(0);
+        }
+
+        .glass-card:hover,
+        .glass-card.focused-card {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+            z-index: 20;
+        }
+
+        /* Tailored Tailwind equivalents for observer */
+        .glass-card.focused-card .group-hover\:text-\[\#D4AF37\] {
+            color: #D4AF37;
+        }
+        .glass-card.focused-card .group-hover\:scale-110 {
+            transform: scale(1.1);
+        }
+        .glass-card.focused-card .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+        .glass-card.focused-card .group-hover\:bg-black\/20 {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 h-[72px] z-50 bg-[#050508]/80 backdrop-blur-xl border-b border-[#D4AF37]/10">
+        <div class="max-w-[1200px] mx-auto h-full px-6 flex items-center justify-between">
+            <a href="#" onclick="showPage('home')" class="flex items-center text-xl tracking-tight">
+                <span class="text-[#D4AF37] font-bold">Madrassa</span>
+                <span class="text-white font-normal ml-1">Manarul Quran</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#courses" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Courses</a>
+                <a href="#services" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Services</a>
+                <a href="#events" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Events</a>
+                <a href="#videos" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Videos</a>
+                <a href="#gallery" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Gallery</a>
+                <a href="#" onclick="showPage('about')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">About</a>
+                <a href="#testimonials" onclick="showPage('home')"
+                    class="text-sm text-white/80 hover:text-[#D4AF37] transition-colors">Testimonials</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#courses" onclick="showPage('home')"
+                    class="hidden sm:block bg-[#D4AF37] text-[#050508] px-6 py-3 rounded-lg text-sm font-semibold hover:brightness-110 transition-all">Get
+                    Started</a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu-overlay p-6 gap-6">
+        <a href="#courses" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Courses</a>
+        <a href="#services" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Services</a>
+        <a href="#events" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Events</a>
+        <a href="#videos" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Videos</a>
+        <a href="#gallery" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Gallery</a>
+        <a href="#" onclick="showPage('about'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">About</a>
+        <a href="#testimonials" onclick="showPage('home'); toggleMobileMenu()"
+            class="text-2xl font-semibold text-white/90">Testimonials</a>
+        <a href="#courses" onclick="showPage('home'); toggleMobileMenu()"
+            class="mt-4 bg-[#D4AF37] text-[#050508] px-6 py-4 rounded-lg text-center font-bold text-lg">Get Started</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home-page" class="page-section active">
+            <!-- Hero -->
+            <section class="relative min-h-[90vh] flex items-center pt-[72px] pb-[80px] md:pb-[100px] mb-[60px] md:mb-[80px]">
+                <!-- Background Image Banner -->
+                <div class="absolute inset-0 z-0 bg-black">
+                    <!-- MOBILE BANNER IMAGE (Displays on phones) -->
+                    <img src="./assets/hero-mobile.jpg" 
+                        onerror="this.src='https://picsum.photos/seed/madrassa-hero-mobile/1080/1920'" 
+                        alt="Hero Banner Mobile" class="block md:hidden w-full h-full object-cover opacity-70">
+
+                    <!-- DESKTOP BANNER IMAGE (Displays on iPads and Laptops) -->
+                    <img src="./assets/7e63a898-0bda-4fd9-bbac-47dc485f6b8eoBTbOMRxbDavlBZYgoXBGgn0c1Pjky3GDNvOUBDdB2bDVyM_883AlcWd2NzksYJ8IoOt1zAof0IP5bdP_s0-Bi10o-LG.Jpeg" 
+                        onerror="this.src='https://picsum.photos/seed/madrassa-hero-desktop/1920/1080'" 
+                        alt="Hero Banner Desktop" class="hidden md:block w-full h-full object-cover opacity-40">
+
+                    <!-- Gradient overlays to ensure text is always readable -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#050508]/40 via-[#050508]/80 to-[#050508]"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#050508]/90 via-transparent to-transparent"></div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 max-w-[1200px] mx-auto px-6 w-full animate-fade-up">
+                    <div class="max-w-[700px]">
+                        <span class="inline-block px-4 py-2 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#D4AF37] text-[0.75rem] font-bold tracking-[0.1em] uppercase mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(212,175,55,0.2)]">مدرسة منار القرآن</span>
+                        
+                        <h1 class="text-[3rem] md:text-[5rem] font-bold leading-[1.05] tracking-[-0.02em] mb-4 text-white drop-shadow-lg">
+                            Guiding Hearts Through the Light of <span class="text-[#D4AF37]">Quran</span>
+                        </h1>
+                        <h2 class="text-[1.5rem] md:text-[2rem] text-[#D4AF37] font-medium mb-6 drop-shadow-md">هدايةُ القلوبِ بنورِ القرآن</h2>
+
+                        <p class="text-white/90 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-[540px] drop-shadow-lg">
+                            Preserving the tradition of Quranic memorization and Islamic values. We provide structured learning for children and adults in a well-focused environment.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 max-w-[500px]">
+                            <a href="#courses" onclick="showPage('home')"
+                                class="bg-[#D4AF37] text-[#050508] px-8 py-4 rounded-xl font-bold hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:bg-white transition-all text-center flex-1">
+                                Explore All Programs
+                            </a>
+                            <button onclick="handleAdmissionClick()"
+                                class="bg-[#050508]/60 backdrop-blur-md border border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-xl font-bold hover:bg-[#D4AF37]/20 transition-all text-center flex-1">
+                                Contact Admissions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overlapping Stats Card -->
+                <div class="absolute bottom-0 left-0 right-0 z-20 px-4 translate-y-1/2">
+                    <div class="max-w-[1000px] mx-auto glass-card bg-[#0a0a12] border border-[#D4AF37]/30 rounded-2xl py-6 px-2 md:px-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),0_0_30px_rgba(212,175,55,0.15)] grid grid-cols-3 divide-x divide-white/10">
+                        
+                        <!-- Stat 1 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 px-2 md:px-6 w-full text-center md:text-left">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
+                                <i data-lucide="book-open" class="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg md:text-2xl">6+</h3>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Islamic Programs</p>
+                            </div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 px-2 md:px-6 w-full text-center md:text-left">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
+                                <i data-lucide="award" class="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg md:text-2xl">Certified</h3>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Expert Scholars</p>
+                            </div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 px-2 md:px-6 w-full text-center md:text-left">
+                            <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
+                                <i data-lucide="users" class="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg md:text-2xl">500+</h3>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Students Enrolled</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses -->
+            <section id="courses" class="py-[120px] px-6">
+                <div class="max-w-[1200px] mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">Our Programs</h2>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto"></div>
+                    </div>
+                    <div id="courses-grid" class="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+                        <!-- Courses are dynamically rendered here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Services -->
+            <section id="services" class="py-[120px] px-6 bg-[#0a0a12]/50">
+                <div class="max-w-[1200px] mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">Our Services</h2>
+                        <p class="text-white/60 max-w-[600px] mx-auto">Specialized programs and personalized support
+                            designed to enhance your Quranic journey.</p>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto mt-6"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="glass-card p-8 rounded-2xl border border-white/5 group relative overflow-hidden">
+                            <div class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="users" class="text-[#D4AF37] w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Morning Islamic Studies Program</h3>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm leading-relaxed">Personalized Islamic studies tailored for students who prefer morning sessions.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-2xl border border-white/5 group relative overflow-hidden">
+                            <div class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="calendar" class="text-[#D4AF37] w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Weekend Intensive</h3>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm leading-relaxed">Specially designed weekend batches for busy students and professionals to Study islamic sciences.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-2xl border border-white/5 group relative overflow-hidden">
+                            <div class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="refresh-cw" class="text-[#D4AF37] w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Morning Tafseer</h3>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm leading-relaxed">Dedicated Tafseer and Quran recital classes for adults to strengthen their understanding and Tajweed accuracy.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-2xl border border-white/5 group relative overflow-hidden">
+                            <div class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="award" class="text-[#D4AF37] w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Monthly Naseehat</h3>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm leading-relaxed">Monthly motivational sessions to inspire and guide our community towards a better future through Islamic teachings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Campus Facilities -->
+            <section id="facilities" class="py-[120px] bg-[#050508] overflow-hidden border-t border-white/5 relative z-10">
+                <div class="max-w-[1200px] mx-auto px-6 mb-16">
+                    <div class="flex flex-col md:flex-row justify-between items-end gap-8 text-center md:text-left">
+                        <div class="shrink-0">
+                            <h2 class="text-[2.5rem] font-semibold mb-4 text-white drop-shadow-md">Campus <span class="text-[#D4AF37]">&</span> Facilities</h2>
+                            <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto md:mx-0"></div>
+                        </div>
+                        <p class="text-white/70 max-w-[500px] text-lg leading-relaxed">Experience our modern campus designed to provide the perfect balance between traditional Islamic education and contemporary physical development.</p>
+                    </div>
+                </div>
+                
+                <!-- The Slider Container -->
+                <div id="facilities-slider" class="flex gap-8 overflow-x-auto pb-12 pt-4 hide-scrollbar snap-x snap-mandatory px-6 md:pl-[calc(50vw-576px)] items-center">
+                    <!-- Dynamically rendered by Javascript -->
+                </div>
+            </section>
+            <!-- Events -->
+            <section id="events" class="py-[120px] px-6 bg-[#0a0a12]">
+                <div class="max-w-[1200px] mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">Events & Updates</h2>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <article class="glass-card rounded-2xl p-8 group overflow-hidden">
+                            <div class="text-[#D4AF37] text-sm font-bold mb-3">10 April 2026</div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Vacation Islamic Foundation Course</h3>
+                            <span class="text-[0.7rem] px-3 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] rounded-full uppercase inline-block">COURSE</span>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm">Join us for our vacation Islamic foundation course and deepen your understanding of the Quran and Sunnah.</p>
+                            </div>
+                        </article>
+                        <article class="glass-card rounded-2xl p-8 group overflow-hidden">
+                            <div class="text-[#D4AF37] text-sm font-bold mb-3">April 2026</div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">Monthly Naseehat</h3>
+                            <span class="text-[0.7rem] px-3 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] rounded-full uppercase inline-block">LECTURE</span>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm">Spiritual lectures every end of the month, focusing on Quranic miracles.</p>
+                            </div>
+                        </article>
+                        <article class="glass-card rounded-2xl p-8 group overflow-hidden">
+                            <div class="text-[#D4AF37] text-sm font-bold mb-3">1 Apr 2026</div>
+                            <h3 class="text-xl font-semibold mb-3 group-hover:text-[#D4AF37] transition-colors">New Batch Admissions</h3>
+                            <span class="text-[0.7rem] px-3 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] rounded-full uppercase inline-block">Open</span>
+                            <div class="card-details">
+                                <p class="text-white/60 text-sm">Admissions open for Summer Hifz intensive and new Deeniyat session.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Videos -->
+            <section id="videos" class="py-[120px] px-6 bg-[#0a0a12]/50">
+                <div class="max-w-[1200px] mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">Video Gallery</h2>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto"></div>
+                    </div>
+                    <div id="home-videos-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        <!-- Videos dynamically generated here -->
+                    </div>
+                    <div class="text-center">
+                        <button onclick="showPage('videos')" class="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] px-8 py-3 rounded-full font-semibold hover:bg-[#D4AF37] hover:text-[#050508] transition-all">
+                            View All Videos
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section id="gallery" class="py-[120px] px-6 bg-[#050508]">
+                <div class="max-w-[1000px] mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">Photo Gallery</h2>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto"></div>
+                    </div>
+                    <!-- Instagram-like UI: 3 columns, square aspect ratio, small gaps -->
+                    <div id="home-gallery-grid" class="grid grid-cols-3 gap-1 md:gap-4 mb-12">
+                        <!-- 3 Gallery images will be dynamically generated here -->
+                    </div>
+                    <div class="text-center">
+                        <button onclick="showPage('gallery')" class="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] px-8 py-3 rounded-full font-semibold hover:bg-[#D4AF37] hover:text-[#050508] transition-all">
+                            View Full Gallery
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Testimonials -->
+            <section id="testimonials" class="py-[120px] bg-[#0a0a0a] overflow-hidden">
+                <div class="max-w-[1200px] mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-[2.5rem] font-semibold mb-4">What Students Say</h2>
+                        <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto"></div>
+                    </div>
+                    <div class="flex gap-6 overflow-x-auto pb-8 hide-scrollbar snap-x snap-mandatory">
+                        <blockquote class="w-[350px] shrink-0 glass-card rounded-xl p-7 snap-start">
+                            <p class="text-white/60 italic mb-8">"The Deeniyat program has transformed my children's
+                                understanding of Islam. They look forward to classes every day."</p>
+                            <footer>
+                                <p class="font-semibold">Tanseer.</p>
+                                <p class="text-[#D4AF37] text-sm">Parent</p>
+                            </footer>
+                        </blockquote>
+                        <blockquote class="w-[350px] shrink-0 glass-card rounded-xl p-7 snap-start">
+                            <p class="text-white/60 italic mb-8">"Madrassa Manarul Quran provides a serene and focused
+                                environment for Hifz. The teachers are patient."</p>
+                            <footer>
+                                <p class="font-semibold">Abdul Basith.</p>
+                                <p class="text-[#D4AF37] text-sm">Hifz Student</p>
+                            </footer>
+                        </blockquote>
+                        <blockquote class="w-[350px] shrink-0 glass-card rounded-xl p-7 snap-start">
+                            <p class="text-white/60 italic mb-8">"The Morning Hifz batch is perfect for my schedule.
+                                Best way to start the day with Barakah."</p>
+                            <footer>
+                                <p class="font-semibold">Hafsa.R.</p>
+                                <p class="text-[#D4AF37] text-sm">Professional</p>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="py-[160px] bg-[#050505] text-center px-6 relative">
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none">
+                </div>
+                <div class="max-w-[600px] mx-auto relative z-10">
+                    <h2 class="text-[2.5rem] font-semibold mb-4">Begin Your Quranic Journey</h2>
+                    <p class="text-lg text-white/60 mb-8">Join hundreds of students learning the word of Allah with
+                        Tajweed and understanding.</p>
+                    <a href="#courses" onclick="showPage('home')"
+                        class="inline-block bg-[#D4AF37] text-[#050508] px-12 py-[18px] rounded-lg font-semibold hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-all">Enroll
+                        Now</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page-section pt-[140px] pb-20 px-6">
+            <div class="max-w-[1200px] mx-auto">
+                <div class="text-center mb-20">
+                    <h1 class="text-[3rem] font-bold">About Manarul Quran</h1>
+                    <p class="text-xl text-white/60 mt-4">Dedicated to Quranic Excellence and Islamic Values</p>
+                </div>
+                <div class="grid lg:grid-cols-[40%_60%] gap-12 items-start max-w-[1000px] mx-auto">
+                    <!-- About Page Image: Change the 'src' below to your own image path -->
+                    <div
+                        class="w-full max-w-[400px] mx-auto lg:max-w-none aspect-[3/4] glass-card border-2 border-dashed border-[#D4AF37]/30 rounded-2xl flex items-center justify-center shadow-[0_0_60px_rgba(212,175,55,0.1)] overflow-hidden">
+                        <img src="./images/22063a568f13a02bc12046ab839fd352.jpg"
+                            onerror="this.src='https://picsum.photos/seed/madrassa-1/800/1000'"
+                            alt="Manarul Quran Madrassa" class="w-full h-full object-cover"
+                            referrerPolicy="no-referrer">
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-[2rem] font-semibold mb-6">Preserving the Light of Quran</h2>
+                        <p class="text-lg text-white/70 leading-relaxed mb-5">Madrassa Manarul Quran was established
+                            with the vision of providing high-quality Quranic education in a modern, premium
+                            environment.</p>
+                        <p class="text-lg text-white/70 leading-relaxed mb-8">Our faculty consists of Qualified scholars
+                            and Huffaz who are dedicated to nurturing the spiritual and intellectual growth of every
+                            student.</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                            <span
+                                class="bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-medium px-4 py-2 rounded uppercase">Qualified
+                                Scholars</span>
+                            <span
+                                class="bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-medium px-4 py-2 rounded uppercase">Structured
+                                Syllabus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Page -->
+        <div id="gallery-page" class="page-section pt-[120px] pb-20 px-4 min-h-screen bg-[#000000]">
+            <div class="max-w-[470px] mx-auto">
+                <div class="flex items-center gap-4 mb-8">
+                    <button onclick="showPage('home')" class="text-[#D4AF37] hover:opacity-80 transition-all flex items-center gap-2">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        <span class="font-semibold text-lg">Back to Home</span>
+                    </button>
+                </div>
+                
+                <!-- Instagram Feed Container -->
+                <div id="insta-feed-container" class="flex flex-col gap-8 pb-10">
+                    <!-- Insta Feed Posts injected here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- All Videos Page -->
+        <div id="videos-page" class="page-section pt-[140px] pb-20 px-6 min-h-screen bg-[#050508]">
+            <div class="max-w-[1200px] mx-auto">
+                <button onclick="showPage('home')" class="flex items-center gap-2 text-[#D4AF37] mb-8 hover:opacity-80 transition-all">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-semibold text-lg">Back to Home</span>
+                </button>
+                <div class="text-center mb-16">
+                    <h1 class="text-[3rem] font-bold">Video Library</h1>
+                    <p class="text-xl text-white/60 mt-4">Explore our lectures, tours, and recitations</p>
+                    <div class="w-[60px] h-[3px] bg-[#D4AF37] mx-auto mt-6"></div>
+                </div>
+                <div id="all-videos-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- High detail videos dynamically generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page-section pt-[160px] pb-[160px] px-6">
+            <div class="max-w-[600px] mx-auto text-center">
+                <h1 class="text-[2.5rem] font-semibold mb-4">Contact Admissions</h1>
+                <p class="text-white/60 mb-12">Have questions about our batches? Get in touch with us directly.</p>
+
+                <div class="grid gap-6 mb-12">
+                    <!-- Email Card -->
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 text-left border border-white/5">
+                        <div
+                            class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center text-[#D4AF37]">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Email Us</p>
+                            <p id="contact-email-display" class="text-lg font-medium text-white/90">
+                                madrasamanarulquran33@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 text-left border border-white/5">
+                        <div
+                            class="w-12 h-12 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center text-[#D4AF37]">
+                            <i data-lucide="phone" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Call Us</p>
+                            <p id="contact-phone-display" class="text-lg font-medium text-white/90">+91 9656431728</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enquiry Button -->
+                <div id="contact-enquiry-container" class="hidden">
+                    <button onclick="openEnquiryForm()"
+                        class="w-full bg-[#D4AF37] text-[#050508] font-bold p-6 rounded-xl flex items-center justify-center gap-3 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] transition-all group">
+                        <span class="text-lg">Enquiry</span>
+                        <i data-lucide="external-link"
+                            class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                    <p class="text-white/40 text-sm mt-4 italic">Click the button above to fill out our official enquiry
+                        form.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Course Detail Page -->
+        <div id="course-detail-page" class="page-section pt-[140px] pb-20 px-6">
+            <div class="max-w-[1000px] mx-auto">
+                <button onclick="showPage('home')"
+                    class="flex items-center gap-2 text-[#D4AF37] mb-8 hover:opacity-80 transition-all">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Back to Courses</span>
+                </button>
+
+                <div class="grid lg:grid-cols-[45%_55%] gap-12 items-start">
+                    <!-- Course Image: The 'src' is dynamically updated via JavaScript from coursesData -->
+                    <div
+                        class="w-full aspect-square glass-card border-2 border-dashed border-[#D4AF37]/30 rounded-2xl flex items-center justify-center shadow-[0_0_60px_rgba(212,175,55,0.1)] overflow-hidden">
+                        <img id="course-detail-image" src="./images/course-placeholder.jpg" alt="Course Image"
+                            class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+
+                    <div>
+                        <span id="course-detail-tag"
+                            class="text-[0.75rem] font-medium text-[#D4AF37] uppercase tracking-wider">Category</span>
+                        <h1 id="course-detail-title"
+                            class="text-[2.5rem] md:text-[3.5rem] font-bold leading-tight mt-4 mb-6">Course Title</h1>
+                        <p id="course-detail-description" class="text-lg text-white/70 leading-relaxed mb-8">Detailed
+                            course description goes here.</p>
+
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/40 uppercase">Duration</p>
+                                    <p id="course-detail-duration" class="font-medium">Flexible</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/40 uppercase">Target Audience</p>
+                                    <p id="course-detail-audience" class="font-medium">All Ages</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <button id="course-detail-register-btn"
+                                class="bg-[#D4AF37] text-[#050508] px-10 py-4 rounded-lg font-bold hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all">Register
+                                Now</button>
+                            <button onclick="handleAdmissionClick()"
+                                class="bg-transparent border border-white/20 text-white px-10 py-4 rounded-lg font-bold hover:bg-white/5 transition-all">Enquire
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] border-t border-white/10 py-12">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col items-center gap-8 md:flex-row md:justify-between">
+            <a href="#" onclick="showPage('home')" class="flex items-center text-xl tracking-tight">
+                <span class="text-[#D4AF37] font-bold">Madrassa</span>
+                <span class="text-white font-normal ml-1">Manarul Quran</span>
+            </a>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                <a href="#" onclick="showPage('home')" class="text-sm text-white/60 hover:text-white">Courses</a>
+                <a href="#videos" onclick="showPage('home')" class="text-sm text-white/60 hover:text-white">Videos</a>
+                <a href="#gallery" onclick="showPage('home')" class="text-sm text-white/60 hover:text-white">Gallery</a>
+                <a href="#" onclick="showPage('about')" class="text-sm text-white/60 hover:text-white">About</a>
+                <a href="#" onclick="showPage('contact')" class="text-sm text-white/60 hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-white/40 text-center md:text-right">© 2025 Madrassa Manarul Quran. All rights
+                reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // ==========================================
+        // GLOBAL CONFIG: Manage your general links here
+        // ==========================================
+        const globalConfig = {
+            admissionFormUrl: "", // Put your Google Form link here
+            email: "madrasamanarulquran33@gmail.com",
+            phone: "+91 9656431728"
+        };
+
+        // ==========================================
+        // VIDEOS DATA: Manage your Youtube videos here
+        // ==========================================
+        const videosData = [
+            {
+                youtubeId: "W1T0vE_vQyQ",
+                title: "Quran Recitation Example",
+                description: "Experience the beautiful recitation of the Holy Quran by our students.",
+                duration: "5:30",
+                date: "April 2025"
+            },
+            {
+                youtubeId: "jX1lE3Yv-pY",
+                title: "Madrassa Campus Tour",
+                description: "Take a look inside our modern facilities and classrooms.",
+                duration: "3:15",
+                date: "March 2025"
+            },
+            {
+                youtubeId: "3FcrS1O7Q1k",
+                title: "Islamic Lecture Highlight",
+                description: "A short snippet from our insightful monthly Naseehat.",
+                duration: "10:45",
+                date: "February 2025"
+            }
+        ];
+
+        function renderVideos() {
+            const homeContainer = document.getElementById('home-videos-grid');
+            const allContainer = document.getElementById('all-videos-grid');
+
+            const createVideoCard = (video, showDetails = false) => `
+                <article onclick="openVideoModal('${video.youtubeId}')" class="glass-card rounded-2xl overflow-hidden cursor-pointer group relative transition-all">
+                    <div class="h-[250px] overflow-hidden relative">
+                        <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" onerror="this.src='https://picsum.photos/seed/${video.youtubeId}/800/600'" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors z-10">
+                            <div class="w-16 h-16 rounded-full bg-[#D4AF37]/90 flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.4)] group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-8 h-8 ml-1 text-[#050508]"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col items-start bg-[#0a0a0a]">
+                        <div class="flex justify-between items-start w-full mb-2">
+                            <h3 class="text-lg font-semibold group-hover:text-[#D4AF37] transition-colors pr-2">${video.title}</h3>
+                            ${showDetails ? `<span class="text-[#D4AF37] text-[0.65rem] font-bold bg-[#D4AF37]/10 px-2 py-1 rounded shrink-0">${video.duration}</span>` : ''}
+                        </div>
+                        <div class="${showDetails ? '' : 'card-details'} w-full">
+                            <p class="text-white/60 text-sm leading-relaxed">${video.description}</p>
+                            ${showDetails ? `<p class="text-white/30 text-[0.65rem] font-semibold mt-4 uppercase tracking-widest">${video.date}</p>` : ''}
+                        </div>
+                    </div>
+                </article>
+            `;
+
+            if (homeContainer) {
+                homeContainer.innerHTML = videosData.slice(0, 3).map(v => createVideoCard(v, false)).join('');
+            }
+            if (allContainer) {
+                allContainer.innerHTML = videosData.map(v => createVideoCard(v, true)).join('');
+            }
+        }
+
+        // ==========================================
+        // FACILITIES DATA: Manage your Campus slider here
+        // ==========================================
+        const facilitiesData = [
+            {
+                title: "Main Campus",
+                description: "Our beautiful, serene architecture designed for focused learning.",
+                image: "https://picsum.photos/seed/campus1/800/600"
+            },
+            {
+                title: "Interactive Classrooms",
+                description: "Digital tools meeting traditional Islamic teaching methods.",
+                image: "https://picsum.photos/seed/class1/800/600"
+            },
+            {
+                title: "Olympic Swimming Pool",
+                description: "Segregated swimming facilities for physical education.",
+                image: "https://picsum.photos/seed/swim1/800/600"
+            },
+            {
+                title: "Sports Playground",
+                description: "Expansive grounds to ensure children stay active.",
+                image: "https://picsum.photos/seed/play1/800/600"
+            },
+            {
+                title: "Grand Masjid",
+                description: "The spiritual heart of our campus where students pray together.",
+                image: "https://picsum.photos/seed/mosque2/800/600"
+            }
+        ];
+
+        function renderFacilities() {
+            const container = document.getElementById('facilities-slider');
+            if(!container) return;
+
+            container.innerHTML = facilitiesData.map(facility => `
+                <div class="w-[300px] md:w-[450px] shrink-0 snap-start group relative rounded-2xl overflow-hidden glass-card cursor-grab active:cursor-grabbing border-white/10 hover:border-[#D4AF37]/50 transition-all">
+                    <img src="${facility.image}" class="w-full h-[250px] md:h-[350px] object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h3 class="font-bold text-xl md:text-2xl text-white mb-2">${facility.title}</h3>
+                        <p class="text-white/70 text-sm md:text-base leading-snug">${facility.description}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Setup Auto-Scroll Slideshow
+            setInterval(() => {
+                // Pause sliding if user is hovering over it or actively touching it
+                if (container.matches(':hover') || (typeof isFingerDown !== 'undefined' && isFingerDown)) return;
+                
+                const scrollStep = window.innerWidth < 768 ? 332 : 482; // card width + gap (300+32 or 450+32)
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                
+                if (container.scrollLeft >= maxScroll - 10) {
+                    container.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back to start
+                } else {
+                    container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                }
+            }, 3000); // Slide every 3 seconds
+        }
+
+        // ==========================================
+        // GALLERY DATA: Manage your photo gallery images here
+        // ==========================================
+        // HOW TO ADD NEW IMAGES:
+        // 1. Upload your image to Cloudinary (or any image host).
+        // 2. Add a new object to the array below following the exact format including captions.
+        const galleryImagesData = [
+            { 
+                url: "https://picsum.photos/seed/gal1/800/800", 
+                location: "TRIVANDRUM",
+                caption: "MashaAllah! The tour was so much fun and engaging.",
+                hashtags: "#MadrassaLife #Tour #exploring",
+                date: "APRIL 10, 2025"
+            },
+            { 
+                url: "https://picsum.photos/seed/gal2/800/800", 
+                location: "CLASSROOM",
+                caption: "Dedicated Quran reading and Tajweed practice.",
+                hashtags: "#Quran #Tajweed #Learning",
+                date: "APRIL 05, 2025"
+            },
+            { 
+                url: "https://picsum.photos/seed/gal3/800/800", 
+                location: "MAIN HALL",
+                caption: "Discovering the beauty of Islamic architecture and heritage.",
+                hashtags: "#Architecture #IslamicArt #Heritage",
+                date: "MARCH 28, 2025"
+            },
+            { 
+                url: "https://picsum.photos/seed/gal4/800/800", 
+                location: "CAMPUS",
+                caption: "Student gathering after the morning Hifz session.",
+                hashtags: "#Students #Brotherhood #Madrassa",
+                date: "MARCH 20, 2025"
+            },
+            { 
+                url: "https://picsum.photos/seed/gal5/800/800", 
+                location: "TRIVANDRUM",
+                caption: "Special guest lecture on prophetic character and manners.",
+                hashtags: "#Lecture #Sunnah #Knowledge",
+                date: "MARCH 15, 2025"
+            },
+            { 
+                url: "https://picsum.photos/seed/gal6/800/800", 
+                location: "LIBRARY",
+                caption: "Intensive study session before the Ramadan break.",
+                hashtags: "#Study #Focus #RamadanPrep",
+                date: "MARCH 01, 2025"
+            }
+        ];
+
+        function renderGallery() {
+            const homeContainer = document.getElementById('home-gallery-grid');
+            const feedContainer = document.getElementById('insta-feed-container');
+
+            if (homeContainer) {
+                homeContainer.innerHTML = galleryImagesData.slice(0, 3).map(img => `
+                    <div class="glass-card relative w-full aspect-square overflow-hidden group cursor-pointer bg-[#10101a] rounded-xl transition-all">
+                        <img src="${img.url}" alt="Gallery Image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                        <!-- Instagran Grid Hover Effect -->
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <i data-lucide="instagram" class="w-8 h-8 text-white scale-90 group-hover:scale-100 transition-transform"></i>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            if (feedContainer) {
+                feedContainer.innerHTML = galleryImagesData.map(img => `
+                    <article class="glass-card bg-[#0f0f0f] border border-white/5 rounded-[12px] overflow-hidden mb-6 transition-all group">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between p-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] font-bold text-xs shrink-0">
+                                    MQ
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-semibold text-[0.85rem] leading-tight flex items-center gap-1">Manarul Quran</span>
+                                    <span class="text-white/50 text-[0.65rem] font-medium tracking-wide uppercase mt-0.5">${img.location}</span>
+                                </div>
+                            </div>
+                            <button class="text-white/50 hover:text-white transition-colors mr-1">
+                                <i data-lucide="more-horizontal" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Image -->
+                        <div class="w-full aspect-square bg-[#050505]">
+                            <img src="${img.url}" class="w-full h-full object-cover" loading="lazy" referrerPolicy="no-referrer">
+                        </div>
+
+                        <!-- Details exactly like screenshot -->
+                        <div class="px-3 pt-4 pb-5 bg-[#0f0f0f]">
+                            <p class="text-[0.9rem] text-white/90 leading-snug">
+                                <span class="font-bold text-white mr-1.5">manarul_quran</span>${img.caption}
+                            </p>
+                            <p class="text-white/40 text-[0.85rem] mt-1">${img.hashtags}</p>
+                            <p class="text-white/30 text-[0.6rem] font-semibold tracking-widest uppercase mt-3">${img.date}</p>
+                        </div>
+                    </article>
+                `).join('');
+            }
+        }
+
+        // ==========================================
+        // COURSE DATA: Manage your images and content here
+        // ==========================================
+        const coursesData = {
+            hifz: {
+                title: "Quran Hifz Program",
+                tag: "Hifz • MEMORIZATION",
+                shortDescription: "A comprehensive memorization track with focus on Tajweed, retention, and spiritual discipline.",
+                description: "Our Quran Hifz Program is designed for students who wish to memorize the entire Quran with proper Tajweed. We provide a structured environment with experienced Huffaz who guide students through the journey of memorization, revision, and retention. The program emphasizes spiritual discipline and character building alongside academic excellence.",
+                priceLabel: "Enquire for Fee",
+                duration: "2-4 Years (Variable)",
+                audience: "Childrens above 10 years",
+                image: "./images/c8a34dc22e9142b00bac53a7ff1879b3.jpg",
+                fallback: "https://picsum.photos/seed/hifz/800/1000",
+                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeFJ-untDJnWxbaeg_16AjMs2FZEEX9fKsA0et5mm1rhcf9Vg/viewform?usp=dialog" // Replace with your Google Form link
+            },
+            deeniyat: {
+                title: "Deeniyat Program",
+                tag: "Kids • ISLAMIC STUDIES",
+                shortDescription: "Essential Islamic foundation: Aqeedah, Fiqh, Hadees, Quran, Dua, and Tajweed.",
+                description: "The Deeniyat Program provides a comprehensive foundation in Islamic studies for children. The syllabus covers Aqeedah (Faith), Fiqh (Jurisprudence), Hadees (Prophetic Traditions), Quranic Recitation, Duas (Supplications), and Tajweed. Our goal is to nurture young minds with the correct understanding of Islam and its practical application in daily life.",
+                priceLabel: "Enquire for Fee",
+                duration: "Ongoing (Academic Year)",
+                audience: "Children (Ages 5-15)",
+                image: "./images/deeniyat.jpg",
+                fallback: "https://picsum.photos/seed/deeniyat/800/1000",
+                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLScJH0amdIVWaYqF9bhyK0nyE5WFFlN9_lWx7Ab_6rfDtkPQeg/viewform?usp=dialog" // Replace with your Google Form link
+            },
+            morning: {
+                title: "Morning Hifz",
+                tag: "Flexible • MORNING",
+                shortDescription: "A focused 1-hour morning session (6:00 AM - 7:00 AM) for students and professionals.",
+                description: "The Morning Hifz batch is a specialized 1-hour session designed for students  who want to dedicate their early morning hours to the Quran. This session focuses on memorization and revision in a quiet, blessed atmosphere before the start of the busy day.",
+                priceLabel: "Special Batch",
+                duration: "1 Hour Daily (6 AM - 7 AM)",
+                audience: "Students who prefer morning sessions",
+                image: "./images/freepik__the-style-is-candid-image-photography-with-natural__5863-300x300.jpeg",
+                fallback: "https://picsum.photos/seed/morning/800/1000",
+                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeu81I0Q8X7BaUaOVRjaErOaCtpqLhP3Nbe47Yo-Lcy616dIw/viewform?usp=dialog" // Replace with your Google Form link
+            },
+            girls: {
+                title: "Quran Hifz Girls",
+                tag: "Ladies • SPECIALIZED",
+                shortDescription: "Dedicated classes for girls and women, taught by qualified female instructors.",
+                description: "Our dedicated Quran Hifz batch for girls and women provides a comfortable and private learning environment. Taught by highly qualified female instructors, this program follows the same rigorous standards as our main Hifz track, ensuring every student reaches their full potential in memorizing the word of Allah.",
+                priceLabel: "Exclusive Batch",
+                duration: "Flexible Batches",
+                audience: "Girls & Women",
+                image: "./images/Quran-in-Arabic.png",
+                fallback: "https://picsum.photos/seed/girls/800/1000",
+                registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfyunqQbWONNxRvIvdrLUhKyxwhWPI2F6ij4VQLmBmVyaG4Gw/viewform?usp=dialog" // Replace with your Google Form link
+            }
+        };
+
+        function renderCourses() {
+            const container = document.getElementById('courses-grid');
+            if (!container) return;
+
+            container.innerHTML = Object.entries(coursesData).map(([id, course]) => `
+                <article onclick="showCourseDetail('${id}')" class="glass-card rounded-2xl overflow-hidden cursor-pointer group">
+                    <div class="h-[200px] overflow-hidden">
+                        <img src="${course.image}" onerror="this.src='${course.fallback}'" alt="${course.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="p-8">
+                        <span class="text-[0.75rem] font-medium text-[#D4AF37] uppercase">${course.tag}</span>
+                        <h3 class="text-[1.5rem] font-semibold mt-3 mb-3 group-hover:text-[#D4AF37] transition-colors">${course.title}</h3>
+                        <div class="card-details">
+                            <p class="text-white/60 mb-4">${course.shortDescription}</p>
+                            <div class="flex items-center justify-between">
+                                <p class="text-[#D4AF37] font-bold text-xl">${course.priceLabel}</p>
+                                <span class="text-[#D4AF37] text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">Details <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+            lucide.createIcons();
+
+            if (window.cardObserver) {
+                document.querySelectorAll('#courses-grid .glass-card').forEach(card => cardObserver.observe(card));
+            }
+        }
+
+        // Central Spotlight Observer for reveal animations
+        const activeCards = new Set();
+        let isFingerDown = false; // Tracks whether user is currently touching the screen
+
+        window.cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activeCards.add(entry.target);
+                } else {
+                    activeCards.delete(entry.target);
+                    entry.target.classList.remove('focused-card');
+                }
+            });
+            updateCenterCard();
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+        });
+
+        function updateCenterCard() {
+            if (activeCards.size === 0) return;
+            
+            // If the user's finger is NOT on the screen, no card should be focused by touch-scroll
+            if (!isFingerDown) {
+                activeCards.forEach(card => card.classList.remove('focused-card'));
+                return;
+            }
+            
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            
+            let closestCard = null;
+            let minDistance = Infinity;
+
+            activeCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenterX = rect.left + rect.width / 2;
+                const cardCenterY = rect.top + rect.height / 2;
+                
+                // Track distance to explicit center
+                const distance = Math.pow(cardCenterX - centerX, 2) + Math.pow(cardCenterY - centerY, 2);
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCard = card;
+                }
+            });
+
+            activeCards.forEach(card => {
+                if (card === closestCard) {
+                    // Only apply focus if card is firmly visually into the viewport
+                    const rect = card.getBoundingClientRect();
+                    const cardCenterY = rect.top + rect.height / 2;
+                    if (Math.abs(cardCenterY - centerY) < window.innerHeight * 0.45) {
+                        card.classList.add('focused-card');
+                    } else {
+                        card.classList.remove('focused-card');
+                    }
+                } else {
+                    card.classList.remove('focused-card');
+                }
+            });
+        }
+
+        // Throttle scrolling tracking
+        let isScrolling = false;
+        function onScrollTracking() {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    updateCenterCard();
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScrollTracking, { passive: true });
+        
+        // Mobile touch state trackers to ensure elements release when fingers do
+        window.addEventListener('touchstart', () => {
+            isFingerDown = true;
+            onScrollTracking();
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            isFingerDown = false;
+            updateCenterCard();
+        }, { passive: true });
+
+        window.addEventListener('touchcancel', () => {
+            isFingerDown = false;
+            updateCenterCard();
+        }, { passive: true });
+        
+        // Initialize elements
+        renderCourses();
+        renderGallery();
+        renderVideos();
+        renderFacilities();
+        lucide.createIcons();
+
+        // Apply observer to any static cards that are currently rendered
+        document.querySelectorAll('.glass-card').forEach(card => window.cardObserver.observe(card));
+        
+        // Track horizontal scrolls like testimonials slider
+        document.querySelectorAll('.overflow-x-auto').forEach(container => {
+            container.addEventListener('scroll', onScrollTracking, { passive: true });
+        });
+        
+        // Add touchmove listeners directly for immediate mobile tracking
+        window.addEventListener('touchmove', onScrollTracking, { passive: true });
+
+        function handleAdmissionClick() {
+            showPage('contact');
+        }
+
+        function openEnquiryForm() {
+            if (globalConfig.admissionFormUrl && globalConfig.admissionFormUrl.trim() !== "") {
+                window.open(globalConfig.admissionFormUrl, '_blank');
+            }
+        }
+
+        // Page switching logic
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            const target = document.getElementById(pageId + '-page');
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            // Update contact page view based on config
+            if (pageId === 'contact') {
+                document.getElementById('contact-email-display').innerText = globalConfig.email;
+                document.getElementById('contact-phone-display').innerText = globalConfig.phone;
+
+                const enquiryContainer = document.getElementById('contact-enquiry-container');
+                if (globalConfig.admissionFormUrl && globalConfig.admissionFormUrl.trim() !== "") {
+                    enquiryContainer.classList.remove('hidden');
+                } else {
+                    enquiryContainer.classList.add('hidden');
+                }
+            }
+        }
+
+        function showCourseDetail(courseId) {
+            const course = coursesData[courseId];
+            if (!course) return;
+
+            document.getElementById('course-detail-title').innerText = course.title;
+            document.getElementById('course-detail-tag').innerText = course.tag;
+            document.getElementById('course-detail-description').innerText = course.description;
+            document.getElementById('course-detail-duration').innerText = course.duration;
+            document.getElementById('course-detail-audience').innerText = course.audience;
+
+            const detailImg = document.getElementById('course-detail-image');
+            detailImg.src = course.image;
+            detailImg.onerror = () => {
+                detailImg.src = course.fallback;
+                detailImg.onerror = null;
+            };
+
+            const registerBtn = document.getElementById('course-detail-register-btn');
+            registerBtn.innerText = "Register Now";
+
+            if (course.registrationUrl && course.registrationUrl.trim() !== "") {
+                registerBtn.onclick = () => window.open(course.registrationUrl, '_blank');
+            } else {
+                registerBtn.onclick = () => showPage('contact');
+            }
+
+            showPage('course-detail');
+            lucide.createIcons();
+        }
+
+        // Mobile menu logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('active');
+
+            if (menu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = 'unset';
+            }
+            lucide.createIcons();
+        }
+
+        // Video Modal Logic
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'unset';
+            setTimeout(() => {
+                iframe.src = "";
+            }, 300); // Wait for transition out before clearing src
+        }
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-all z-10 w-10 h-10 flex items-center justify-center">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="w-full max-w-[900px] aspect-video px-4 relative">
+            <iframe id="video-iframe" class="w-full h-full rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

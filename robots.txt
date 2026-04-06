@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Wait to make sure you update this with your real custom domain!
+Sitemap: https://manarulquran.com/sitemap.xml
