@@ -264,13 +264,15 @@
                     <div class="max-w-[700px] bg-white/5 backdrop-blur-lg border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl">
                         <span class="inline-block px-4 py-2 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#D4AF37] text-[0.75rem] font-bold tracking-[0.1em] uppercase mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(212,175,55,0.2)]">مدرسة منار القرآن</span>
                         
-                        <h1 class="text-[3rem] md:text-[5rem] font-bold leading-[1.05] tracking-[-0.02em] mb-4 text-white drop-shadow-lg">
-                            Guiding Hearts Through the Light of <span class="text-[#D4AF37]">Quran</span>
+                        <h1 class="text-[2.25rem] md:text-[4rem] font-bold leading-[1.1] tracking-[-0.02em] mb-4 text-white drop-shadow-lg">
+                            Guiding Hearts <br class="block sm:hidden">
+                            Through the Light <br class="block sm:hidden">
+                            of <span class="text-[#D4AF37]">Quran</span>
                         </h1>
-                        <h2 class="text-[1.5rem] md:text-[2rem] text-[#D4AF37] font-medium mb-6 drop-shadow-md">هدايةُ القلوبِ بنورِ القرآن</h2>
+                        <h2 class="text-[1.25rem] md:text-[1.75rem] text-[#D4AF37] font-medium mb-6 drop-shadow-md">هدايةُ القلوبِ بنورِ القرآن</h2>
 
                         <p class="text-white/90 font-medium text-lg md:text-xl leading-relaxed mb-10 max-w-[540px] drop-shadow-lg">
-                            Preserving the tradition of Quranic memorization and Islamic values. We provide structured learning for children and adults in a well-focused environment.
+                            Nurturing generations upon the timeless values of Islam. We provide an inspiring environment for authentic Islamic education and structured Hifz, guiding both children and adults towards spiritual excellence.
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-4 max-w-[500px]">
@@ -297,7 +299,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-bold text-lg md:text-2xl">6+</h3>
-                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Islamic Programs</p>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Structured Courses</p>
                             </div>
                         </div>
 
@@ -307,8 +309,8 @@
                                 <i data-lucide="award" class="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6"></i>
                             </div>
                             <div>
-                                <h3 class="text-white font-bold text-lg md:text-2xl">Certified</h3>
-                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Expert Scholars</p>
+                                <h3 class="text-white font-bold text-lg md:text-2xl">Qualified</h3>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Scholars & Huffaz</p>
                             </div>
                         </div>
 
@@ -319,7 +321,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-bold text-lg md:text-2xl">500+</h3>
-                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Students Enrolled</p>
+                                <p class="text-white/50 text-[0.65rem] md:text-sm uppercase tracking-wider">Active Learners</p>
                             </div>
                         </div>
 
@@ -1062,101 +1064,20 @@
             }
         }
 
-        // Central Spotlight Observer for reveal animations
-        const activeCards = new Set();
-        let isFingerDown = false; // Tracks whether user is currently touching the screen
-
-        window.cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    activeCards.add(entry.target);
-                } else {
-                    activeCards.delete(entry.target);
-                    entry.target.classList.remove('focused-card');
-                }
-            });
-            updateCenterCard();
-        }, {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0
-        });
-
-        function updateCenterCard() {
-            if (activeCards.size === 0) return;
+        // Mobile touch logic: Only expand card when explicitly touched
+        document.addEventListener('touchstart', (e) => {
+            const card = e.target.closest('.glass-card');
             
-            // On larger screens, we mainly rely on hover instead of scroll-based center focus,
-            // unless they are actively touch-scrolling. 
-            // On mobile, we keep the center element focused even after lifting the finger.
-            if (window.innerWidth >= 1024 && !isFingerDown) {
-                activeCards.forEach(card => card.classList.remove('focused-card'));
-                return;
-            }
-            
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            
-            let closestCard = null;
-            let minDistance = Infinity;
-
-            activeCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const cardCenterX = rect.left + rect.width / 2;
-                const cardCenterY = rect.top + rect.height / 2;
-                
-                // Track distance to explicit center
-                const distance = Math.pow(cardCenterX - centerX, 2) + Math.pow(cardCenterY - centerY, 2);
-                
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestCard = card;
-                }
-            });
-
-            activeCards.forEach(card => {
-                if (card === closestCard) {
-                    // Only apply focus if card is firmly visually into the viewport
-                    const rect = card.getBoundingClientRect();
-                    const cardCenterY = rect.top + rect.height / 2;
-                    if (Math.abs(cardCenterY - centerY) < window.innerHeight * 0.45) {
-                        card.classList.add('focused-card');
-                    } else {
-                        card.classList.remove('focused-card');
-                    }
-                } else {
-                    card.classList.remove('focused-card');
-                }
-            });
-        }
-
-        // Throttle scrolling tracking
-        let isScrolling = false;
-        function onScrollTracking() {
-            if (!isScrolling) {
-                window.requestAnimationFrame(() => {
-                    updateCenterCard();
-                    isScrolling = false;
+            // If we touch a card, focus it and unfocus all others
+            if (card) {
+                document.querySelectorAll('.glass-card.focused-card').forEach(c => {
+                    if (c !== card) c.classList.remove('focused-card');
                 });
-                isScrolling = true;
+                card.classList.add('focused-card');
+            } else {
+                // If we touch outside any card, remove focus from all
+                document.querySelectorAll('.glass-card.focused-card').forEach(c => c.classList.remove('focused-card'));
             }
-        }
-
-        window.addEventListener('scroll', onScrollTracking, { passive: true });
-        
-        // Mobile touch state trackers to ensure elements release when fingers do
-        window.addEventListener('touchstart', () => {
-            isFingerDown = true;
-            onScrollTracking();
-        }, { passive: true });
-
-        window.addEventListener('touchend', () => {
-            isFingerDown = false;
-            updateCenterCard();
-        }, { passive: true });
-
-        window.addEventListener('touchcancel', () => {
-            isFingerDown = false;
-            updateCenterCard();
         }, { passive: true });
         
         // Initialize elements
@@ -1165,17 +1086,6 @@
         renderVideos();
         renderFacilities();
         lucide.createIcons();
-
-        // Apply observer to any static cards that are currently rendered
-        document.querySelectorAll('.glass-card').forEach(card => window.cardObserver.observe(card));
-        
-        // Track horizontal scrolls like testimonials slider
-        document.querySelectorAll('.overflow-x-auto').forEach(container => {
-            container.addEventListener('scroll', onScrollTracking, { passive: true });
-        });
-        
-        // Add touchmove listeners directly for immediate mobile tracking
-        window.addEventListener('touchmove', onScrollTracking, { passive: true });
 
         function handleAdmissionClick() {
             showPage('contact');
